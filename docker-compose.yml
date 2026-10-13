@@ -10,13 +10,13 @@ services:
   # PostgreSQL
   # ---------------------------------------------------------------------------- #
   postgres:
-    container_name: "catalog-postgres"
+    container_name: "catalog_postgres"
     image: "postgres:16-alpine"
     restart: "unless-stopped"
     ports:
       - "5429:5432"
     environment:
-      POSTGRES_USER: "catalog-user"
+      POSTGRES_USER: "catalog_user"
       POSTGRES_PASSWORD: "catalog_pass"
       POSTGRES_DB: "catalog_db"
     volumes:
