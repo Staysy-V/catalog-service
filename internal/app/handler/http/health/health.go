@@ -1,8 +1,9 @@
 package rhealth
 
 import (
-	rhandler "github.com/Staysy-V/catalog-service/internal/app/handler/http"
 	"net/http"
+
+	rhandler "github.com/Staysy-V/catalog-service/internal/app/handler/http"
 )
 
 type handler struct{}

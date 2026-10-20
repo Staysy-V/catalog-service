@@ -18,5 +18,4 @@ func main() {
 	if err := httpServer.Serve(); err != nil {
 		log.Fatalf("HTTP server failed: %v", err)
 	}
-
 }
