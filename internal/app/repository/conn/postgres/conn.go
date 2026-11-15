@@ -48,7 +48,11 @@ func NewClient(ctx context.Context, cfg section.RepositoryPostgres) (*Client, er
 	log.Printf("postgres: read_timeout=%s write_timeout=%s",
 		cfg.ReadTimeout, cfg.WriteTimeout)
 
-	sqlDB := sql.OpenDB(pgdriver.NewConnector(pgdriver.WithDSN(dsn)))
+	sqlDB := sql.OpenDB(pgdriver.NewConnector(
+		pgdriver.WithDSN(dsn),
+		pgdriver.WithReadTimeout(cfg.ReadTimeout),
+		pgdriver.WithWriteTimeout(cfg.WriteTimeout),
+	))
 	sqlDB.SetMaxOpenConns(10)
 
 	db := bun.NewDB(sqlDB, pgdialect.New(), bun.WithDiscardUnknownColumns())

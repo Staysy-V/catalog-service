@@ -14,6 +14,6 @@ type (
 		Name           string        `required:"true"`
 		ReadTimeout    time.Duration `split_words:"true" default:"30s"`
 		WriteTimeout   time.Duration `split_words:"true" default:"30s"`
-		MigrationTable string        `split_words:"true" default:"schema_migration"`
+		MigrationTable string        `split_words:"true" default:"schema_migrations"`
 	}
 )
